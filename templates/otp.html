@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+		{% if error_message %}
+		<p>{{ error_message }}</p>
+	{% endif %}
+    <form method="post" autocomplete="off">
+        {% csrf_token %}
+        <div>
+            <label for="otp">Otp</label>
+            <input type="text" class="form-control" name="otp" required><br>
+        </div>
+        <div>
+            <input type="submit" value="Confirm" class="btn btn-primary">
+        </div>
+    </form>
+{% endblock %}
